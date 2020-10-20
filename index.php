@@ -21,7 +21,6 @@
 	<main>
 		<div class="head">
 			<h1 class="title">НАШ 8-Ф</h1>
-			
 		</div>
 		<div class="memories">
 			<h2 class="memory__title">Наша остання поїздка</h2>
