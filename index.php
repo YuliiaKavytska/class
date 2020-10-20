@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/index.css">
 	<link rel="shortcut icon" type="image/x-icon" href="images/logo1.png" />
-	
+
 	<title>Наш клас</title>
 </head>
 <body>
@@ -21,6 +21,7 @@
 	<main>
 		<div class="head">
 			<h1 class="title">НАШ 8-Ф</h1>
+			
 		</div>
 		<div class="memories">
 			<h2 class="memory__title">Наша остання поїздка</h2>
