@@ -26,6 +26,7 @@
 			<input id="password-in" type="password" name="password" placeholder="fIm62WF92z" required>
 			<a id="go-to-sign-up" href="/pages/registration.php">Немає акаунту? Зареєструйтесь!</a>
 			<button type="submit">Увійти</button>
+			
 		</form>
 	</div>
 </body>
