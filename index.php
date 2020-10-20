@@ -1,6 +1,5 @@
 <?php
-	include "configs/db.php";
-	include "configs/settings.php";
+	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +15,7 @@
 <body>
 
 	<?php
-		include "pice-of-site/header.php";
+		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 	?>
 	<main>
 		<div class="head">
