@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/index.css">
 	<link rel="shortcut icon" type="image/x-icon" href="images/logo1.png" />
+	
 	<title>Наш клас</title>
 </head>
 <body>
