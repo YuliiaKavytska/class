@@ -178,7 +178,7 @@ textarea:focus::placeholder {
 }
 
 #chat-list #infos-chat p {
-  width: 150px;
+  width: 125px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

@@ -1,3 +1,7 @@
+<?php
+	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +16,9 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		if(isset($_GET["user_id"])){
+			include $_SERVER['DOCUMENT_ROOT'] . "/modules/user-modal.php";
+		}
 		if(!isset($_COOKIE["student"])){
 			header("Location: /pages/log-in.php");
 		}
@@ -28,78 +35,37 @@
 					</button>
 				</div>
 
-				<div id="chat-list">
-					<ul>
-						<li class="active-chat">
-							<div class="avatar">
-								<img src="/images/02.png" alt="user">
-							</div>
-							<div id="infos-chat">
-							<h2>Misha Yaremenko</h2>
-							<p>Доброе утро! Доброе утро! Доброе утро!</p>
-							</div>
-							<div class="time">
-								9:10
-							</div>
-						</li>
-						<li>
-							<div class="avatar">
-									<img src="/images/01.png" alt="user">
-								</div>
-								<div id="infos-chat">
-								<h2>Boris Climov</h2>
-								<p>Мне нужна твоя помощь</p>
-								</div>
-								<div class="time">
-									9:10
-								</div>
-						</li>
-					</ul>
-				</div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/chats-block.php" ?>
 			</aside>
+
 			<section id="message-story">
-				<div id="messages">
-					<ul>
-						<li>
-							<div class="avatar">
-								<img src="/images/02.png" alt="user">
-							</div>
-							<div id="infos-chat">
-							<h2>Misha Yaremenko</h2>
-							<p>Доброе утро! Доброе утро! Доброе утро!</p>
-							</div>
-							<div class="time">
-								9:10
-							</div>
-						</li>
-						<li>
-							<div class="avatar">
-								<img src="/images/02.png" alt="user">
-							</div>
-							<div id="infos-chat">
-							<h2>Misha Yaremenko</h2>
-							<p>Доброе утро! Доброе утро! Доброе утро!</p>
-							</div>
-							<div class="time">
-								9:10
-							</div>
-						</li>
-					</ul>
-				</div>
+				<?php 
+				include $_SERVER['DOCUMENT_ROOT'] . "/modules/message-block.php";
+				if(isset($_GET["chat_id"])){
+					$recipiendSql = "SELECT * FROM contacts WHERE id=" . $_GET["chat_id"];
+					$recipientResult = $connect -> query($recipiendSql);
+					$recipient = mysqli_fetch_assoc($recipientResult);
 
-				<div id="send-form">
-					<div class="avatar">
-						<img src="/images/04.png" alt="user">
-					</div>
-					<div class="main-form">
-						<textarea name="" id="text-message" placeholder="Ваше повідомлення..."></textarea>
-						<button> <img src="/images/send.png" alt="">Надіслати</button>
-					</div>
-					<div class="avatar">
-						<img src="/images/02.png" alt="user">
-					</div>
-				</div>
-
+					$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["student"];
+					$findResult = $connect -> query($findUserSql);
+					$user = mysqli_fetch_assoc($findResult);
+					?>
+					<form id="send-form" method="POST">
+						<div class="avatar">
+							<img src="<?php if($user["image"] == ""){ echo "/images/not-find.png"; }else{ echo $user["image"]; } ?>" alt="user">
+						</div>
+						<div class="main-form">
+							<textarea name="message" id="text-message" placeholder="Ваше повідомлення..."></textarea>
+							<button type="send"> <img src="/images/send.png" alt="">Надіслати</button>
+						</div>
+						<div class="avatar">
+							<img src="<?php if($recipient["image"] == ""){ echo "/images/not-find.png"; }else{ echo $recipient["image"]; } ?>" alt="user">
+						</div>
+					</form>
+					<?php
+				}
+				?>
+				
 			</section>
 			<section class="actions">
 				<div class="actions__info">
@@ -109,19 +75,10 @@
 					<a href="/pages/contacts.php" target="_blank">Контакти вчителів</a>
 				</div>
 				<div class="homework-block">
-					<p>Останні 10 дамашніх завдань</p>
+					<p>Останні домашні завдання:</p>
 					<a href="/pages/homework.php" target="_blank">Переглянути всі домашні завдання</a>
 					<ul class="homework">
-						<li class="home__item">
-							<p>Виконати на <span>Понеділок:</span></p>
-							<p>Геометрія:</p>
-							<p>Вивчити теореми. №112-115</p>
-						</li>
-						<li class="home__item">
-							<p>Виконати на <span>Понеділок:</span></p>
-							<p>Геометрія:</p>
-							<p>Вивчити теореми. №112-115</p>
-						</li>
+						<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/last-homework.php" ?>
 					</ul>
 				</div>
 			</section>
@@ -129,6 +86,6 @@
 	</main>
 
 	<div class="baground">	</div>
-	
+	<script src="/js/main.js"></script>
 </body>
 </html>
