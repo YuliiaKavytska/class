@@ -36,12 +36,12 @@
 	?>
 	<div class="modal" id="log-in-modal" style="display:block;">
 		<p>Вхід</p>
-		<form id="log-in-form" action="/pages/log-in.php" method="POST">
+		<form id="log-in-form" action="/log-in.php" method="POST">
 			<label for="login-in">Ваш логін:</label>
 			<input id="login-in" type="email" name="email" placeholder="aaa@gmail.com" required>
 			<label for="password-in">Ваш пароль:</label>
 			<input id="password-in" type="password" name="password" placeholder="fIm62WF92z" required>
-			<a id="go-to-sign-up" href="/pages/registration.php">Немає акаунту? Зареєструйтесь!</a>
+			<a id="go-to-sign-up" href="/registration.php">Немає акаунту? Зареєструйтесь!</a>
 			<button type="submit">Увійти</button>
 		</form>
 	</div>

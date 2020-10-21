@@ -13,23 +13,21 @@
 				<a href="/pages/admin-rating.php">Оцінки</a> 
 				<a href="/pages/admin-homework.php">Домашнє завдання</a> 
 				<a href="/pages/teacher-chat.php">Чат з учнями</a> 
-				<a id="open-log-in" href="/modules/log-out.php">Вийти</a>
+				<a href="/log-out.php">Вийти</a>
 		<?php
 			}elseif(isset($_COOKIE["student"])){
 		?>
 				<a href="/pages/child-chat.php">Чат з однокласниками</a> 
 				<a href="/pages/teacher-chat.php">Чат з вчителями</a> 
 				<a href="/pages/homework.php">Дізнатися домашню роботу</a> 
-				<a href="/modules/log-out.php">Вийти</a>
+				<a href="/log-out.php">Вийти</a>
 		<?php
 			}else{
 		?>
-				<a href="/pages/registration.php">Зареєструватися</a> 
-				<a href="/pages/log-in.php">Увійти</a> 
+				<a href="/registration.php">Зареєструватися</a> 
+				<a href="/log-in.php">Увійти</a> 
 		<?php
 			}
 		?>
-		
-
 	</div>
 </header>

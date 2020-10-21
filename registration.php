@@ -37,7 +37,7 @@
 	?>
 	<div class="modal" id="sign-up-modal" style="display:block;">
 		<p>Реєстрація</p>
-		<form id="sign-up-form" action="/pages/registration.php" method="POST">
+		<form id="sign-up-form" action="/registration.php" method="POST">
 			<label for="name-user">ПІБ: *</label>
 			<input id="name-user" type="text" placeholder="Іван Іванов Іванович" name="name" required>
 			<label for="exampleFormControlSelect1">Ваш статус: *</label>
@@ -59,7 +59,7 @@
 			<label for="password-up-2">Повторіть пароль: *</label>
 			<input id="password-up-2" type="password" placeholder="fIm62WF92z" required>
 			<p id="passwords-match">Ваші паролі не співпадають!</p>
-			<a id="go-to-log-in" href="/pages/log-in.php">Я вже зареєстрований!</a>
+			<a id="go-to-log-in" href="/log-in.php">Я вже зареєстрований!</a>
 			<button type="submit" id="sign-up">Зареєструватися</button>
 		</form>
 	</div>
