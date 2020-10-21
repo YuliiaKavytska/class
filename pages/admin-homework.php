@@ -26,7 +26,7 @@
 				<input type="text" placeholder="Вправи">
 				<button>Оголосити</button>
 			</form>
-			<table id="admin-rating">
+			<table id="admin-home">
 				<tr>
 					<th>№</th>
 					<th>Предмет</th>
