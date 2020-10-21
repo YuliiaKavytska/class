@@ -12,10 +12,14 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		if(!isset($_COOKIE["student"])){
+			header("Location: /pages/log-in.php");
+		}
 	?>
 
 	<main>
-		<div id="content">
+		<div id="content" class="flex">
+			<p class="admin-title">Розклад дзвінків</p>
 			<table>
 				<tr>
 					<th>№ уроку</th>

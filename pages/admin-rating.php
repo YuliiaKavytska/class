@@ -1,3 +1,6 @@
+<?php
+	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +16,27 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		if(!isset($_COOKIE["teacher"])){
+			header("Location: /pages/log-in.php");
+		}
 	?>
 
 	<main id="main">
-		<div id="content" class="admin">
+		<div id="content" class="flex">
 			<p class="admin-title">Поставити учню оцінку</p>
-			<form action="">
-				<select name="" id="">
-					<option value=""></option>
-					<option value=""></option>
-					<option value=""></option>
-					<option value=""></option>
+			
+			<form action="POST">
+				<select name="student">
+					<?php
+						$allStudentsSql = "SELECT * FROM contacts WHERE user_status = 0";
+						$studentResult = $connect->query($allStudentsSql);
+						while($student = mysqli_fetch_assoc($studentResult)){
+							if($student["id"] == 1){
+								continue;
+							}
+							echo "<option value='". $student["id"] . "'>". $student["name"] . "</option>";
+						}
+					?>
 				</select>
 				<input type="text" placeholder="10.10.2020">
 				<input type="text" placeholder="12">

@@ -178,7 +178,7 @@ textarea:focus::placeholder {
 }
 
 #chat-list #infos-chat p {
-  width: 150px;
+  width: 125px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -416,7 +416,7 @@ textarea:focus::placeholder {
  =============================== */
 
 table {
-  margin: 30px auto;
+  margin: 0px auto;
   font-size: 14px;
   border-collapse: collapse;
   text-align: center;

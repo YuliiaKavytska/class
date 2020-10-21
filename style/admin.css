@@ -6,10 +6,6 @@
   overflow-y: auto;
 }
 
-.admin, .admin-homework {
-  flex-direction: column;
-}
-
 /* =========================== */
 /* Скролл */
 #content::-webkit-scrollbar {
@@ -26,20 +22,12 @@
   border-radius: 10px;
 }
 
-.admin-title {
-  text-align: center;
-  color: #231b80;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 15px 0px 25px 0px;
-}
-
 form {
   text-align: center;
 }
 
 .admin input,
-.admin-homework input,
+.flex input,
 select {
   width: 25%;
   margin: 0 auto 25px;
@@ -51,13 +39,17 @@ select {
   font-weight: bold;
   color: #231b80;
   transition: 1s;
-  font-family: initial;
 }
 
 input::placeholder,
 option:first-child {
   transition: 0.5s;
   color: #3186e867;
+}
+
+input:focus::placeholder,
+option:focus:first-child {
+  color: transparent;
 }
 
 button {
@@ -79,7 +71,21 @@ button:active {
   background: #231b80;
 }
 
-.admin th,
+/* .admin th,
 .admin td {
-  padding: 15px 70px;
+  padding: 15px 90px;
+} */
+
+#admin-rating th:first-child,
+#admin-rating th:nth-child(5),
+#admin-rating td:nth-child(5),
+#admin-rating th:last-child,
+#admin-rating td:last-child,
+#admin-rating td:first-child{
+  padding: 15px 20px;
 }
+
+#admin-rating th:nth-child(2),
+#admin-rating td:nth-child(2){
+  padding: 15px 90px;
+} 

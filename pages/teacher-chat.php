@@ -19,7 +19,7 @@
 		if(isset($_GET["user_id"])){
 			include $_SERVER['DOCUMENT_ROOT'] . "/modules/user-modal.php";
 		}
-		if(!isset($_COOKIE["student"])){
+		if(!isset($_COOKIE["student"]) && !isset($_COOKIE["teacher"])){
 			header("Location: /pages/log-in.php");
 		}
 	?>
@@ -35,7 +35,7 @@
 					</button>
 				</div>
 
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/chats-block.php" ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/teacher-chat-block.php" ?>
 			</aside>
 
 			<section id="message-story">
@@ -45,8 +45,11 @@
 					$recipiendSql = "SELECT * FROM contacts WHERE id=" . $_GET["chat_id"];
 					$recipientResult = $connect -> query($recipiendSql);
 					$recipient = mysqli_fetch_assoc($recipientResult);
-
-					$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["student"];
+					if(isset($_COOKIE["student"])){
+						$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["student"];
+					}else{
+						$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["teacher"];
+					}
 					$findResult = $connect -> query($findUserSql);
 					$user = mysqli_fetch_assoc($findResult);
 					?>
@@ -67,21 +70,7 @@
 				?>
 				
 			</section>
-			<section class="actions">
-				<div class="actions__info">
-					<p>Корисна інформація:</p>
-					<a href="/pages/lessons.php" target="_blank">Розклад дзвінків</a>
-					<a href="/pages/rating.php" target="_blank">Переглянути оцінки</a>
-					<a href="/pages/contacts.php" target="_blank">Контакти вчителів</a>
-				</div>
-				<div class="homework-block">
-					<p>Останні домашні завдання:</p>
-					<a href="/pages/homework.php" target="_blank">Переглянути всі домашні завдання</a>
-					<ul class="homework">
-						<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/last-homework.php" ?>
-					</ul>
-				</div>
-			</section>
+			
 		</div>
 	</main>
 

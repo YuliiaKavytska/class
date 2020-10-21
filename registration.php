@@ -1,5 +1,24 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
+
+	if(
+		isset($_POST["name"]) && isset($_POST["user_status"]) &&
+		isset($_POST["phone"]) && isset($_POST["about"]) &&
+		isset($_POST["email"]) && isset($_POST["password"]) &&
+		isset($_POST["subject"]) &&
+		$_POST["name"] != "" && $_POST["user_status"] != "" &&
+		$_POST["phone"] != "" && $_POST["about"] != "" &&
+		$_POST["email"] != "" && $_POST["password"] != "" 
+	){
+		$regisSql = "INSERT INTO contacts (`name`, user_status, phone, about, `login`, `password`, `subject`)" . 
+		"VALUES ('" . $_POST["name"] . "', '" . $_POST["user_status"] . "', '" . $_POST["phone"] . 
+		"', '" . $_POST["about"] . "', '" . $_POST["email"] . "', '" . $_POST["password"] . "', '" . $_POST["subject"] . "')";
+		if(mysqli_query($connect, $regisSql)){
+			header("Location: /pages/log-in.php");
+		}else{
+			echo "<h2>Error!</h2>" . mysqli_error($connect);
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +37,11 @@
 	?>
 	<div class="modal" id="sign-up-modal" style="display:block;">
 		<p>Реєстрація</p>
-		<form id="sign-up-form" action="registration.php" method="POST">
+		<form id="sign-up-form" action="/registration.php" method="POST">
 			<label for="name-user">ПІБ: *</label>
 			<input id="name-user" type="text" placeholder="Іван Іванов Іванович" name="name" required>
 			<label for="exampleFormControlSelect1">Ваш статус: *</label>
-			<select name="category" class="form-control" id="exampleFormControlSelect1">
+			<select name="user_status" class="form-control" id="exampleFormControlSelect1">
 				<option value="0">Не вибрано</option>
 				<option value="1">Вчитель</option>
 				<option value="2">Учень</option>
@@ -40,8 +59,8 @@
 			<label for="password-up-2">Повторіть пароль: *</label>
 			<input id="password-up-2" type="password" placeholder="fIm62WF92z" required>
 			<p id="passwords-match">Ваші паролі не співпадають!</p>
-			<a id="go-to-log-in" href="/pages/log-in.php">Я вже зареєстрований!</a>
-			<button id="sign-up">Зареєструватися</button>
+			<a id="go-to-log-in" href="/log-in.php">Я вже зареєстрований!</a>
+			<button type="submit" id="sign-up">Зареєструватися</button>
 		</form>
 	</div>
 	<script src="/js/sign-login.js"></script>
