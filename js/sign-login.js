@@ -1,5 +1,4 @@
 let signUpModal = document.querySelector("#sign-up-modal");
-let closeSignUpBtn = document.querySelector("#sign-up-modal .close");
 let signUpBtn = document.querySelector("#sign-up");
 let passwordsMatch = document.querySelector("#passwords-match");
 // ===============================================

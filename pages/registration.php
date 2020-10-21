@@ -13,7 +13,6 @@
 		$regisSql = "INSERT INTO contacts (`name`, user_status, phone, about, `login`, `password`, `subject`)" . 
 		"VALUES ('" . $_POST["name"] . "', '" . $_POST["user_status"] . "', '" . $_POST["phone"] . 
 		"', '" . $_POST["about"] . "', '" . $_POST["email"] . "', '" . $_POST["password"] . "', '" . $_POST["subject"] . "')";
-		// var_dump(mysqli_query($connect, $regisSql));
 		if(mysqli_query($connect, $regisSql)){
 			header("Location: /pages/log-in.php");
 		}else{
@@ -61,7 +60,7 @@
 			<input id="password-up-2" type="password" placeholder="fIm62WF92z" required>
 			<p id="passwords-match">Ваші паролі не співпадають!</p>
 			<a id="go-to-log-in" href="/pages/log-in.php">Я вже зареєстрований!</a>
-			<button type="submit">Зареєструватися</button>
+			<button type="submit" id="sign-up">Зареєструватися</button>
 		</form>
 	</div>
 	<script src="/js/sign-login.js"></script>

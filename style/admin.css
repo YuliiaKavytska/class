@@ -39,13 +39,17 @@ select {
   font-weight: bold;
   color: #231b80;
   transition: 1s;
-  font-family: initial;
 }
 
 input::placeholder,
 option:first-child {
   transition: 0.5s;
   color: #3186e867;
+}
+
+input:focus::placeholder,
+option:focus:first-child {
+  color: transparent;
 }
 
 button {

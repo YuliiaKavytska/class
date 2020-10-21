@@ -44,12 +44,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-/* Наследовть семейство шрифта. По умолчанию они этого не делают */
-input,
-button,
-textarea {
-  font-family: inherit;
-}
+
 textarea {
   resize: none;
 }
@@ -90,7 +85,7 @@ h6 {
 /*Обнуление ко всем элементам*/
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-body {
+body, input, input::placeholder, select, option{
   font-family: "Roboto", sans-serif;
 }
 
@@ -173,7 +168,7 @@ footer .menu {
   -moz-box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.9);
   box-shadow: 0px 0px 41px 0px rgba(0, 0, 0, 0.9);
 }
-.baground {
+.baground, .bg {
   display: none;
   background: rgba(0, 0, 0, 0.7);
   position: absolute;

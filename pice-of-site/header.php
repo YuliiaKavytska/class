@@ -17,6 +17,7 @@
 			}elseif(isset($_COOKIE["student"])){
 		?>
 				<a href="/pages/child-chat.php">Чат з однокласниками</a> 
+				<a href="/pages/teacher-chat.php">Чат з вчителями</a> 
 				<a href="/pages/homework.php">Дізнатися домашню роботу</a> 
 				<a href="/modules/log-out.php">Вийти</a>
 		<?php
