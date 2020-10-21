@@ -1,8 +1,14 @@
 <div id="chat-list">
 	<ul>
 	<?php
-		$chatsSql = "SELECT * FROM contacts WHERE user_status = 1";
-		$chatResult = mysqli_query($connect, $chatsSql);
+		if(isset($_COOKIE["teacher"])){
+			$chatsSql = "SELECT * FROM contacts WHERE user_status = 0";
+			$chatResult = mysqli_query($connect, $chatsSql);
+		}else{
+			$chatsSql = "SELECT * FROM contacts WHERE user_status = 1";
+			$chatResult = mysqli_query($connect, $chatsSql);
+		}
+		
 		while($user = mysqli_fetch_assoc($chatResult)){
 			?>
 			<li <?php if(isset($_GET["chat_id"]) && $_GET["chat_id"] == $user["id"]){ echo "class='active-chat'"; } ?>>

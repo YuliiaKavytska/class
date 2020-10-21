@@ -12,6 +12,7 @@
 		?>
 				<a href="/pages/admin-rating.php">Оцінки</a> 
 				<a href="/pages/admin-homework.php">Домашнє завдання</a> 
+				<a href="/pages/teacher-chat.php">Чат з учнями</a> 
 				<a id="open-log-in" href="/modules/log-out.php">Вийти</a>
 		<?php
 			}elseif(isset($_COOKIE["student"])){

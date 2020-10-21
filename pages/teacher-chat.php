@@ -19,7 +19,7 @@
 		if(isset($_GET["user_id"])){
 			include $_SERVER['DOCUMENT_ROOT'] . "/modules/user-modal.php";
 		}
-		if(!isset($_COOKIE["student"])){
+		if(!isset($_COOKIE["student"]) && !isset($_COOKIE["teacher"])){
 			header("Location: /pages/log-in.php");
 		}
 	?>
@@ -45,8 +45,11 @@
 					$recipiendSql = "SELECT * FROM contacts WHERE id=" . $_GET["chat_id"];
 					$recipientResult = $connect -> query($recipiendSql);
 					$recipient = mysqli_fetch_assoc($recipientResult);
-
-					$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["student"];
+					if(isset($_COOKIE["student"])){
+						$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["student"];
+					}else{
+						$findUserSql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["teacher"];
+					}
 					$findResult = $connect -> query($findUserSql);
 					$user = mysqli_fetch_assoc($findResult);
 					?>
