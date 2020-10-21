@@ -47,10 +47,13 @@
                 ?>
 				
 				<tr>
+
 					<td><?php echo $contact["id"]; ?></td>
 					<td><?php echo $contact["name"]; ?></td>
 					<td><?php echo $contact["subject"]; ?></td>
 					<td><?php echo $contact["phone"]; ?></td>
+
+
 				</tr>
 				
 				<?php
