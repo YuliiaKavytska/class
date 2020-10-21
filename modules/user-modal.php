@@ -2,9 +2,17 @@
 	$sqlModal = "SELECT * FROM contacts WHERE id=" . $_GET["user_id"];
 	$resultModal = mysqli_query($connect, $sqlModal);
 	$userModal = mysqli_fetch_assoc($resultModal);
+
+	if(isset($_COOKIE["teacher"])){
+		$sql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["teacher"];
+	}else{
+		$sql = "SELECT * FROM contacts WHERE id=" . $_COOKIE["student"];
+	}
+	$result = mysqli_query($connect, $sql);
+	$user = mysqli_fetch_assoc($result);
 ?>
 
-<div <?php if($userModal["user_status"] == 1){ echo "class='bg'"; }else{ echo "class='baground'"; } ?> style="display:block;">	</div>
+<div <?php if($user["user_status"] == 1){ echo "class='bg'"; }else{ echo "class='baground'"; } ?> style="display:block;">	</div>
 <div class="user-modal" style="display:block;">
 	<div class="close"><a href="<?php if($userModal["user_status"] == 1){ echo "/pages/teacher-chat.php"; }else{ echo "/pages/child-chat.php"; } ?>">X</a></div>
 	<div class="inner-userid">
