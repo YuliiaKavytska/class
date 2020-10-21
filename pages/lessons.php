@@ -17,28 +17,46 @@
 		}
 	?>
 
+	<?php
+	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
+
+	$sql_lessons = "SELECT * FROM lessons";
+	// выполнить sql запрос в базе данных
+	$result_lessons = mysqli_query($connect, $sql_lessons);
+	// mysqli_num_rows - получить кол-во результатов
+	$col_lessons = mysqli_num_rows($result_lessons);
+	?>
+
 	<main>
 		<div id="content" class="flex">
 			<p class="admin-title">Розклад дзвінків</p>
 			<table>
-				<tr>
+			<tr>
 					<th>№ уроку</th>
 					<th>Початок</th>
 					<th>Кінець</th>
 					<th>Перерва</th>
 				</tr>
+			<?php
+				
+				$i = 0;
+              // пока в перемменной хранится значение меньше чем кол-во уроков
+              while($i < $col_lessons) {
+				// mysqli_fetch_assoc - преобразовать полученные данные пользователя в массив
+				$lessons = mysqli_fetch_assoc($result_lessons);
+				?>
+				
 				<tr>
-					<td>1</td>
-					<td>8:00</td>
-					<td>8:45</td>
-					<td>10 хв</td>
+					<td><?php echo $lessons["id"]; ?></td>
+					<td><?php echo $lessons["time_1"]; ?></td>
+					<td><?php echo $lessons["time_2"]; ?></td>
+					<td><?php echo $lessons["break"]; ?> хв</td>
 				</tr>
-				<tr>
-					<td>2</td>
-					<td>8:55</td>
-					<td>9:40</td>
-					<td>10 хв</td>
-				</tr>
+				<?php
+				// Увеличиваем счетчик
+				$i = $i + 1;
+		  		}
+		  	?>
 			</table>
 		</div>
 	</main>
