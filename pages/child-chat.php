@@ -12,6 +12,9 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		if(!isset($_COOKIE["student"])){
+			header("Location: /pages/log-in.php");
+		}
 	?>
 
 	<main>
@@ -103,7 +106,7 @@
 					<p>Корисна інформація:</p>
 					<a href="/pages/lessons.php" target="_blank">Розклад дзвінків</a>
 					<a href="/pages/rating.php" target="_blank">Переглянути оцінки</a>
-					<a href="/pages/contacts.php" target="_blank">Контакти учителів</a>
+					<a href="/pages/contacts.php" target="_blank">Контакти вчителів</a>
 				</div>
 				<div class="homework-block">
 					<p>Останні 10 дамашніх завдань</p>

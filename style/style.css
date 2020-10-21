@@ -137,3 +137,18 @@ footer .menu {
 .menu a:hover{
   background: #1d64b4;
 }
+
+/* ============================================================================= */
+/* Стили для заголовка над таблицами */
+
+.admin, .flex {
+  flex-direction: column;
+}
+
+.admin-title {
+  text-align: center;
+  color: #231b80;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0px 25px 0px;
+}

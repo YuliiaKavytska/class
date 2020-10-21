@@ -7,14 +7,27 @@
 	</a>
 
 	<div class="menu">
-		<a href="/pages/child-chat.php">Чат з однокласниками</a> 
-		<a href="/pages/homework.php">Дізнатися домашню роботу</a> 
-		<a href="/pages/registration.php">Зареєструватися</a> 
-		<a href="/pages/log-in.php">Увійти</a> 
-
-		<a href="/pages/admin-rating.php">Оцінки</a> 
-		<a href="/pages/admin-homework.php">Домашнє завдання</a> 
+		<?php
+			if(isset($_COOKIE["teacher"])){
+		?>
+				<a href="/pages/admin-rating.php">Оцінки</a> 
+				<a href="/pages/admin-homework.php">Домашнє завдання</a> 
+				<a id="open-log-in" href="/modules/log-out.php">Вийти</a>
+		<?php
+			}elseif(isset($_COOKIE["student"])){
+		?>
+				<a href="/pages/child-chat.php">Чат з однокласниками</a> 
+				<a href="/pages/homework.php">Дізнатися домашню роботу</a> 
+				<a href="/modules/log-out.php">Вийти</a>
+		<?php
+			}else{
+		?>
+				<a href="/pages/registration.php">Зареєструватися</a> 
+				<a href="/pages/log-in.php">Увійти</a> 
+		<?php
+			}
+		?>
 		
-		<!-- <a id="open-log-in" href="log-in.php">Вийти</a>  -->
+
 	</div>
 </header>

@@ -13,10 +13,13 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		if(!isset($_COOKIE["teacher"])){
+			header("Location: /pages/log-in.php");
+		}
 	?>
 
 	<main id="main">
-		<div id="content" class="admin">
+		<div id="content" class="flex">
 			<p class="admin-title">Поставити учню оцінку</p>
 			<form action="">
 				<select name="" id="">

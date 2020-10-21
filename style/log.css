@@ -1,26 +1,45 @@
 /* html{
 	height: inherit;
 } */
-body{
-	background: -moz-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(42,123,214,1) 100%); /* ff3.6+ */
-	background: -webkit-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(42,123,214,1) 100%); /* safari5.1+,chrome10+ */
-	background: -o-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(42,123,214,1) 100%); /* opera 11.10+ */
-	background: -ms-linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(42,123,214,1) 100%); /* ie10+ */
-	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(42,123,214,1) 100%); /* w3c */
-
+body {
+  background: -moz-linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(42, 123, 214, 1) 100%
+  ); /* ff3.6+ */
+  background: -webkit-linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(42, 123, 214, 1) 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(42, 123, 214, 1) 100%
+  ); /* opera 11.10+ */
+  background: -ms-linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(42, 123, 214, 1) 100%
+  ); /* ie10+ */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(42, 123, 214, 1) 100%
+  ); /* w3c */
 }
 .modal {
-	width: 400px;
-	min-height: 330px;
-	padding: 15px 20px;
-	background: #fff;
-	border-radius: 5px;
-	border: 2px solid #231B80;
-	left: calc(50% - 200px);
-	display: none;
-	z-index: 2;
-	margin: 0px 0px 30px 0px;
-	margin: 25px auto;
+  width: 400px;
+  min-height: 330px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid #231b80;
+  left: calc(50% - 200px);
+  display: none;
+  z-index: 2;
+  margin: 0px 0px 30px 0px;
+  margin: 25px auto;
 }
 
 /* =========================== */
@@ -28,12 +47,12 @@ body{
 #log-in-modal {
   min-height: 260px;
   margin-top: 150px;
- }
- #sign-up-modal {
-	min-height: 340px;
-	top: 120px;
- }
- 
+}
+#sign-up-modal {
+  min-height: 340px;
+  top: 120px;
+}
+
 #log-in-form,
 #sign-up-form {
   margin-top: 20px;
@@ -41,19 +60,19 @@ body{
 }
 
 #sign-up-modal > p,
-#log-in-modal > p{
-  color: #231B80;
+#log-in-modal > p {
+  color: #231b80;
   font-size: 20px;
   font-weight: bold;
   text-decoration: underline;
   text-align: center;
 }
- #log-in-form,
- #sign-up-form {
-	margin-top: 20px;
-	height: calc(100% - 40px);
- }
- 
+#log-in-form,
+#sign-up-form {
+  margin-top: 20px;
+  height: calc(100% - 40px);
+}
+
 #log-in-form,
 #sign-up-form {
   margin-top: 20px;
@@ -63,32 +82,33 @@ body{
 #sign-up-form label {
   display: inline-block;
   font-size: 15px;
-  color: #231B80;
+  color: #231b80;
   font-weight: bold;
   margin: 0px 0px 7px 0px;
 }
 
 #log-in-form input,
-#sign-up-form input, select {
+#sign-up-form input,
+select {
   display: block;
   width: 100%;
   margin: 0 auto 25px;
   padding: 8px 10px;
-  border: 1px solid #3186E8;
+  border: 1px solid #3186e8;
   border-radius: 5px;
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: bold;
-  color: #231B80;
+  color: #231b80;
   transition: 1s;
   font-family: initial;
 }
-select option:nth-child(n+1){
-	color: #231B80;
+select option:nth-child(n + 1) {
+  color: #231b80;
 }
 
 #log-in-form input::placeholder,
-#sign-up-form input::placeholder, 
+#sign-up-form input::placeholder,
 #sign-up-form option:first-child {
   transition: 0.5s;
   color: #3186e867;
@@ -97,9 +117,9 @@ select option:nth-child(n+1){
 #log-in-form input:focus,
 #sign-up-form input:focus,
 select:focus {
-  -webkit-box-shadow: 0px 0px 10px -2px #3186E8;
-  -moz-box-shadow: 0px 0px 10px -2px #3186E8;
-  box-shadow: 0px 0px 10px -2px #3186E8;
+  -webkit-box-shadow: 0px 0px 10px -2px #3186e8;
+  -moz-box-shadow: 0px 0px 10px -2px #3186e8;
+  box-shadow: 0px 0px 10px -2px #3186e8;
 }
 
 #log-in-form input:focus::placeholder,
@@ -110,7 +130,7 @@ select:focus {
 .modal button {
   padding: 7px 25px;
   border-radius: 5px;
-  border: 1px solid #231B80;
+  border: 1px solid #231b80;
   background: #3186e867;
   float: right;
   transition: 0.5s;
@@ -119,18 +139,18 @@ select:focus {
 }
 
 .modal button:hover {
-  background: #3186E8;
+  background: #3186e8;
   color: #fff;
 }
 
 .modal button:active {
   transition: none;
-  background: #231B80;
+  background: #231b80;
 }
 
 #log-in-form a,
 #sign-up-form a {
-  color: #3186E8;
+  color: #3186e8;
   font-size: 15px;
   line-height: 35px;
   transition: 0.5s;
@@ -138,17 +158,17 @@ select:focus {
 
 #log-in-form a:hover,
 #sign-up-form a:hover {
-  color: #231B80;
+  color: #231b80;
 }
 
 #sign-up-form p {
   display: none;
   margin-bottom: 12px;
   padding: 10px 10px;
-  border: 1px solid #231B80;
+  border: 1px solid #231b80;
   border-radius: 5px;
   font-size: 16px;
-  color: #231B80;
+  color: #231b80;
   background: #3186e867;
   transition: 1s;
 }

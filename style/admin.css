@@ -6,10 +6,6 @@
   overflow-y: auto;
 }
 
-.admin, .admin-homework {
-  flex-direction: column;
-}
-
 /* =========================== */
 /* Скролл */
 #content::-webkit-scrollbar {
@@ -26,20 +22,12 @@
   border-radius: 10px;
 }
 
-.admin-title {
-  text-align: center;
-  color: #231b80;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 15px 0px 25px 0px;
-}
-
 form {
   text-align: center;
 }
 
 .admin input,
-.admin-homework input,
+.flex input,
 select {
   width: 25%;
   margin: 0 auto 25px;

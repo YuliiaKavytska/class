@@ -1,6 +1,5 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/index.css">
-	<link rel="shortcut icon" type="image/x-icon" href="images/logo1.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png" />
 
 	<title>Наш клас</title>
 </head>
 <body>
-
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 	?>
