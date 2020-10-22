@@ -40,9 +40,12 @@
 				</aside>
 
 			<section id="message-story">
-				<?php 
-				include $_SERVER['DOCUMENT_ROOT'] . "/modules/message-block.php";
-				
+				<div id="messages">
+					<?php 
+					include $_SERVER['DOCUMENT_ROOT'] . "/modules/message-block.php";
+					?>
+				</div>
+				<?php
 				if(isset($_GET["chat_id"])){
 					$recipiendSql = "SELECT * FROM contacts WHERE id=" . $_GET["chat_id"];
 					$recipientResult = $connect -> query($recipiendSql);
@@ -55,12 +58,14 @@
 					$findResult = $connect -> query($findUserSql);
 					$user = mysqli_fetch_assoc($findResult);
 					?>
-					<form id="send-form" method="POST">
+					<form id="send-form" method="POST" action="http://class.local/show-chat.php">
 						<div class="avatar">
 							<img src="<?php if($user["image"] == ""){ echo "/images/not-find.png"; }else{ echo $user["image"]; } ?>" alt="user">
 						</div>
 						<div class="main-form">
 							<textarea name="message" id="text-message" placeholder="Ваше повідомлення..."></textarea>
+							<input type="hidden" name="sender" value="<?php if(isset($_COOKIE["student"])){ echo $_COOKIE["student"]; }else{ echo $_COOKIE["teacher"]; } ?>">
+							<input type="hidden" name="recipient" value="<?php echo $_GET["chat_id"] ?>">
 							<button type="send"> <img src="/images/send.png" alt="">Надіслати</button>
 						</div>
 						<div class="avatar">

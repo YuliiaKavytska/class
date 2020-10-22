@@ -17,7 +17,7 @@
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 		if(!isset($_COOKIE["teacher"])){
-			header("Location: /log-in.php");
+			header("Location: /pages/log-in.php");
 		}
 	?>
 
@@ -36,33 +36,20 @@
 							}
 							echo "<option value='". $student["id"] . "'>". $student["name"] . "</option>";
 						}
-					?>
+						?>
 				</select>
 				<input type="text" placeholder="10.10.2020">
 				<input type="text" placeholder="12">
 				<button>Виставити</button>
 			</form>
-			<table id="admin-rating">
-				<tr>
-					<th>№</th>
-					<th>Учень</th>
-					<th>Предмет</th>
-					<th>Дата</th>
-					<th>Оцінка</th>
-					<th>Видалення</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>А А</td>
-					<td>Алгебра</td>
-					<td>2020-10-10</td>
-					<td>10</td>
-					<td>Видалити</td>
-				</tr>
-				
+
+			<table id="admin-home">
+				<?php
+					include $_SERVER['DOCUMENT_ROOT'] . "/modules/table-rating.php";
+				?>
 			</table>
 		</div>
 	</main>
-	
+<script src="/js/admin.js"></script>
 </body>
 </html>

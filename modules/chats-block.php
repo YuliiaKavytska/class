@@ -2,14 +2,15 @@
 <ul id="replace">
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
-	
 	if(isset($_COOKIE["teacher"])){
+		$findUser = $_COOKIE["teacher"];
 		if(isset($chat) && $nameChat ==  'teacher'){
 			$chatsSql = "SELECT * FROM contacts WHERE name LIKE '%" . $chat . "%' AND user_status=0";
 		}else{
 			$chatsSql = "SELECT * FROM contacts WHERE user_status = 0";
 		}
 	}else{
+		$findUser = $_COOKIE["student"];
 		if(isset($chat) && $nameChat ==  'child'){
 			$chatsSql = "SELECT * FROM contacts WHERE name LIKE '%" . $chat . "%' AND user_status=0";
 		}else if(isset($chat) && $nameChat ==  'student'){
@@ -30,12 +31,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 					<img src="<?php if($user["image"] == ""){ echo "/images/not-find.png"; }else{ echo $user["image"]; }  ?>" alt="user">
 				</a>
 				<a id="infos-chat" href="<?php if(stristr($_SERVER['REQUEST_URI'],  '/pages/teacher-chat.php') || (isset($nameChat) && $nameChat ==  'teacher')){ echo "/pages/teacher-chat.php?chat_id=" . $user["id"];  }else{ echo "/pages/child-chat.php?chat_id=" . $user["id"]; } ?>">
-					<h2><?php echo $user["name"]; ?></h2>
-					<p><?php echo $user["last_message"]; ?></p>
+					<h2><?php if($user["id"] == $findUser){ echo "Мої нотатки"; }else{ echo $user["name"]; }  ?></h2>
+					<p><?php if($user["id"] == $findUser){ echo ""; }else{ echo $user["last_message"]; }  ?></p>
 				</a>
-				<div class="time">
-					<?php echo $user["time"]; ?>
-				</div>
 			</li>
 			<?php	
 		}

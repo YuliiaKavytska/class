@@ -76,12 +76,16 @@ button:active {
   padding: 15px 90px;
 } */
 
+#admin-home th:first-child,
+#admin-home td:first-child,
 #admin-rating th:first-child,
+#admin-rating td:first-child,
 #admin-rating th:nth-child(5),
 #admin-rating td:nth-child(5),
 #admin-rating th:last-child,
 #admin-rating td:last-child,
-#admin-rating td:first-child{
+#admin-home th:last-child,
+#admin-home td:last-child{
   padding: 15px 20px;
 }
 
@@ -89,3 +93,7 @@ button:active {
 #admin-rating td:nth-child(2){
   padding: 15px 90px;
 } 
+
+.click{
+  cursor: pointer;
+}

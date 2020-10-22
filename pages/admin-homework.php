@@ -13,36 +13,29 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 		if(!isset($_COOKIE["teacher"])){
-			header("Location: /log-in.php");
+			header("Location: /pages/log-in.php");
 		}
 	?>
 
 	<main id="main">
 		<div id="content" class="flex">
 			<p class="admin-title">Оголосити про нове домашнє завдання</p>
-			<form action="">
-				<input type="text" placeholder="Дата перевірки">
-				<input type="text" placeholder="Вправи">
-				<button>Оголосити</button>
+			<form action="http://class.local/modules/add-homework.php" method="POST" id="add">
+				<input type="text" name="date" placeholder="Дата перевірки">
+				<input type="text" name="home" placeholder="Завдання">
+				<input type="hidden" name="teacher" value="<?php echo $_COOKIE["teacher"] ?>">
+				<button type="submit" name="add-home">Оголосити</button>
 			</form>
+
 			<table id="admin-home">
-				<tr>
-					<th>№</th>
-					<th>Предмет</th>
-					<th>Дата перевірки</th>
-					<th>Завдання</th>
-				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Алгебра</td>
-					<td>2020-10-10</td>
-					<td>Lorem ipsum dolor sit amet.</td>
-				</tr>
+				<?php
+					include $_SERVER['DOCUMENT_ROOT'] . "/modules/table-home.php";
+				?>
 			</table>
 		</div>
 	</main>
-	
+	<script src="/js/admin.js"></script>
 </body>
 </html>
