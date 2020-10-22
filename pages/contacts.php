@@ -17,6 +17,16 @@
 		}
 	?>
 
+	<?php
+	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
+
+	$sql_contacts = "SELECT * FROM contacts WHERE user_status != 0";
+	// выполнить sql запрос в базе данных
+	$result_contacts = mysqli_query($connect, $sql_contacts);
+	// mysqli_num_rows - получить кол-во результатов
+	$col_contacts = mysqli_num_rows($result_contacts);
+	?>
+
 	<main>
 		<div id="content" class="flex">
 			<p class="admin-title">Контакти вчителів</p>
@@ -27,18 +37,28 @@
 					<th>Предмет</th>
 					<th>Контакт</th>
 				</tr>
+			<?php
+			// $i счетчик для подсчета пользователей
+            $i = 0;
+              // пока в перемменной хранится значение меньше чем кол-во пользователей
+              while($i < $col_contacts) {
+                // mysqli_fetch_assoc - преобразовать полученные данные пользователя в массив
+                $contact = mysqli_fetch_assoc($result_contacts);
+                ?>
+				
 				<tr>
-					<td>1</td>
-					<td>Афффффффф. Аффффф. фффффффф</td>
-					<td>Алгебра</td>
-					<td>+380935951745</td>
+					<td><?php echo $contact["id"]; ?></td>
+					<td><?php echo $contact["name"]; ?></td>
+					<td><?php echo $contact["subject"]; ?></td>
+					<td><?php echo $contact["phone"]; ?></td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>А. А.</td>
-					<td>Алгебра</td>
-					<td>+380935951745</td>
-				</tr>
+				
+				<?php
+            // Увеличиваем счетчик
+            $i = $i + 1;
+		  }
+		  ?>                                          
+
 			</table>
 		</div>
 	</main>
