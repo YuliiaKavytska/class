@@ -29,7 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 				<a class="avatar" href="<?php if(stristr($_SERVER['REQUEST_URI'],  '/pages/teacher-chat.php')){ echo "/pages/teacher-chat.php?user_id=" . $user["id"];  }else{ echo "/pages/child-chat.php?user_id=" . $user["id"]; } ?>">
 					<img src="<?php if($user["image"] == ""){ echo "/images/not-find.png"; }else{ echo $user["image"]; }  ?>" alt="user">
 				</a>
-				<a id="infos-chat" href="<?php if(stristr($_SERVER['REQUEST_URI'],  '/pages/teacher-chat.php') || $nameChat ==  'teacher'){ echo "/pages/teacher-chat.php?chat_id=" . $user["id"];  }else{ echo "/pages/child-chat.php?chat_id=" . $user["id"]; } ?>">
+				<a id="infos-chat" href="<?php if(stristr($_SERVER['REQUEST_URI'],  '/pages/teacher-chat.php') || (isset($nameChat) && $nameChat ==  'teacher')){ echo "/pages/teacher-chat.php?chat_id=" . $user["id"];  }else{ echo "/pages/child-chat.php?chat_id=" . $user["id"]; } ?>">
 					<h2><?php echo $user["name"]; ?></h2>
 					<p><?php echo $user["last_message"]; ?></p>
 				</a>

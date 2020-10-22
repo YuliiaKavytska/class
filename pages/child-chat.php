@@ -42,6 +42,7 @@
 			<section id="message-story">
 				<?php 
 				include $_SERVER['DOCUMENT_ROOT'] . "/modules/message-block.php";
+				
 				if(isset($_GET["chat_id"])){
 					$recipiendSql = "SELECT * FROM contacts WHERE id=" . $_GET["chat_id"];
 					$recipientResult = $connect -> query($recipiendSql);

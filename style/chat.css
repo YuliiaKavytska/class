@@ -142,6 +142,7 @@ textarea:focus::placeholder {
   margin: 3px 0px;
   padding: 5px 3px;
   border-radius: 5px;
+  min-height: 70px;
 }
 #chat-list ul li .avatar {
   flex: 0 0 60px;
@@ -238,7 +239,7 @@ textarea:focus::placeholder {
 #message-story li {
   position: relative;
   padding: 10px;
-  min-height: 61px;
+  min-height: 70px;
 }
 
 #message-story li #infos-chat p {
