@@ -57,6 +57,7 @@ main {
   border-right: 2px solid #3186e8;
   height: 100%;
   overflow: hidden;
+  min-width: 300px;
 }
 
 /* =========================== */
@@ -101,7 +102,7 @@ main {
   border-radius: 5px;
   margin: 0px 5px 0px 0px;
   font-size: 16px;
-  color: #3186e867;
+  color: #231b80;
   letter-spacing: 1px;
   font-weight: bolder;
 }
@@ -141,6 +142,7 @@ textarea:focus::placeholder {
   margin: 3px 0px;
   padding: 5px 3px;
   border-radius: 5px;
+  min-height: 70px;
 }
 #chat-list ul li .avatar {
   flex: 0 0 60px;
@@ -237,7 +239,7 @@ textarea:focus::placeholder {
 #message-story li {
   position: relative;
   padding: 10px;
-  min-height: 61px;
+  min-height: 70px;
 }
 
 #message-story li #infos-chat p {

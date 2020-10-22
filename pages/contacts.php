@@ -13,7 +13,7 @@
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 		if(!isset($_COOKIE["student"])){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}
 	?>
 
@@ -47,10 +47,15 @@
                 ?>
 				
 				<tr>
+
+
+
 					<td><?php echo $contact["id"]; ?></td>
 					<td><?php echo $contact["name"]; ?></td>
 					<td><?php echo $contact["subject"]; ?></td>
 					<td><?php echo $contact["phone"]; ?></td>
+
+
 				</tr>
 				
 				<?php

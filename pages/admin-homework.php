@@ -15,7 +15,7 @@
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 		include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 		if(!isset($_COOKIE["teacher"])){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}
 	?>
 
