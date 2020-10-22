@@ -260,3 +260,9 @@ footer .menu {
 .pointer {
   cursor: pointer;
 }
+
+.chose-contact {
+  color: #231b80;
+  text-align: center;
+  margin-top: 235px;
+}

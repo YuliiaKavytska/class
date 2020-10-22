@@ -17,7 +17,7 @@
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 		if(!isset($_COOKIE["teacher"])){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}
 	?>
 
@@ -36,13 +36,21 @@
 							}
 							echo "<option value='". $student["id"] . "'>". $student["name"] . "</option>";
 						}
-					?>
+											?>
 				</select>
 				<input type="text" placeholder="10.10.2020">
 				<input type="text" placeholder="12">
 				<button>Виставити</button>
 			</form>
+			<?php
+
+			$sqlRating = "SELECT * FROM rating WHERE subject=" . $_COOKIE["teacher"];
+			$resultRating = mysqli_query($connect, $sqlRating);
+			$col_rating = mysqli_num_rows($resultRating);
+		?>
+
 			<table id="admin-rating">
+
 				<tr>
 					<th>№</th>
 					<th>Учень</th>
@@ -51,14 +59,33 @@
 					<th>Оцінка</th>
 					<th>Видалення</th>
 				</tr>
+				<?php
+			
+            $i = 0;
+              // пока в перемменной хранится значение меньше чем кол-во оценок
+              while($i < $col_rating) {
+				$rating = mysqli_fetch_assoc($resultRating);
+				$sqlStudent = "SELECT * FROM contacts WHERE id=" . $rating["student_id"];
+				$resultStudentResult = mysqli_query($connect, $sqlStudent);
+				$student = mysqli_fetch_assoc($resultStudentResult);
+				$sqlTeacher = "SELECT * FROM contacts WHERE id=" . $rating["subject"];
+				$resultTeacher = mysqli_query($connect, $sqlTeacher);
+				$teacher = mysqli_fetch_assoc($resultTeacher);
+             				
+                ?>
 				<tr>
-					<td>1</td>
-					<td>А А</td>
-					<td>Алгебра</td>
-					<td>2020-10-10</td>
-					<td>10</td>
+					<td><?php echo $rating["id"]; ?></td>
+					<td><?php echo $student["name"]; ?></td>
+					<td><?php echo $teacher["subject"]; ?></td>
+					<td><?php echo $rating["date"]; ?></td>
+					<td><?php echo $rating["rating"]; ?></td>
 					<td>Видалити</td>
 				</tr>
+				<?php
+            	// Увеличиваем счетчик
+            	$i = $i + 1;
+		  	}
+		  	?>
 				
 			</table>
 		</div>

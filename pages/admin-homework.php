@@ -13,8 +13,9 @@
 
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
+		include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 		if(!isset($_COOKIE["teacher"])){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}
 	?>
 
@@ -23,9 +24,16 @@
 			<p class="admin-title">Оголосити про нове домашнє завдання</p>
 			<form action="">
 				<input type="text" placeholder="Дата перевірки">
-				<input type="text" placeholder="Вправи">
+				<input type="text" placeholder="Завдання">
 				<button>Оголосити</button>
 			</form>
+
+			<?php
+			$sqlHomework = "SELECT * FROM homework WHERE subject=" . $_COOKIE["teacher"];
+			$resultHomework = mysqli_query($connect, $sqlHomework);
+			$col_homework = mysqli_num_rows($resultHomework);
+			?>
+
 			<table id="admin-home">
 				<tr>
 					<th>№</th>
@@ -33,13 +41,30 @@
 					<th>Дата перевірки</th>
 					<th>Завдання</th>
 				</tr>
+
+				<?php
+			
+				$i = 0;
+				// пока в перемменной хранится значение меньше чем кол-во ДЗ
+				while($i < $col_homework) {
+					$homework = mysqli_fetch_assoc($resultHomework);
+					$sqlTeacher = "SELECT * FROM contacts WHERE id=" . $homework["subject"];
+					$resultTeacher = mysqli_query($connect, $sqlTeacher);
+					$teacher = mysqli_fetch_assoc($resultTeacher);
+             				
+                ?>
 				
 				<tr>
-					<td>1</td>
-					<td>Алгебра</td>
-					<td>2020-10-10</td>
-					<td>Lorem ipsum dolor sit amet.</td>
+					<td><?php echo $homework["id"]; ?></td>
+					<td><?php echo $teacher["subject"]; ?></td>
+					<td><?php echo $homework["day"]; ?></td>
+					<td><?php echo $homework["homework"]; ?></td>
 				</tr>
+				<?php
+            	// Увеличиваем счетчик
+            	$i = $i + 1;
+		  	}
+		  	?>
 			</table>
 		</div>
 	</main>
