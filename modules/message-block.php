@@ -2,7 +2,7 @@
 	<ul>
 		<li>
 			<a class="avatar" href="<?php echo "/pages/child-chat.php?user_id=" . $ПЕРЕМЕННАЯ_ПОЛЬЗОВАТЕЛЯ["id"] ?>">
-				<img src="/images/02.png" alt="user">
+				<img src="<?php if($ПЕРЕМЕННАЯ_ПОЛЬЗОВАТЕЛЯ["image"] == ""){ echo "/images/not-find.png"; }else{ echo $ПЕРЕМЕННАЯ_ПОЛЬЗОВАТЕЛЯ["image"]; }  ?>" alt="user">
 			</a>
 			<div id="infos-chat">
 				<h2>Misha Yaremenko</h2>
