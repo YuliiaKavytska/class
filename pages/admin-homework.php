@@ -33,7 +33,7 @@
 				<?php
 					include $_SERVER['DOCUMENT_ROOT'] . "/modules/table-home.php";
 				?>
-			</table>
+		</table>
 		</div>
 	</main>
 	<script src="/js/admin.js"></script>

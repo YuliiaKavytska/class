@@ -36,6 +36,7 @@
 							}
 							echo "<option value='". $student["id"] . "'>". $student["name"] . "</option>";
 						}
+
 						?>
 				</select>
 				<input type="text" placeholder="10.10.2020">
@@ -47,7 +48,7 @@
 				<?php
 					include $_SERVER['DOCUMENT_ROOT'] . "/modules/table-rating.php";
 				?>
-			</table>
+		</table>
 		</div>
 	</main>
 <script src="/js/admin.js"></script>
