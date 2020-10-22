@@ -20,23 +20,24 @@
 			include $_SERVER['DOCUMENT_ROOT'] . "/modules/user-modal.php";
 		}
 		if(!isset($_COOKIE["student"]) && !isset($_COOKIE["teacher"])){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}
 	?>
 
 	<main>
 		<div id="content">
 			<aside id="users">
-
-				<div id="search">
+			<form method="POST" id="search" action="http://class.local/sql-find-user.php">
 					<input type="text" name="find-user" placeholder="Search...">
-					<button>
+					<input type="hidden" name="chat" value='<?php if(isset($_COOKIE['student'])){ echo "student"; }else{ echo "teacher"; } ?>'>
+					<button type="submit" name="find">
 						<img src="/images/search.png" alt="search">
-					</button>
+					</button >
+				</form>
+				<div id="chat-list">
+					<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/chats-block.php" ?>
 				</div>
-
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/modules/teacher-chat-block.php" ?>
-			</aside>
+				</aside>
 
 			<section id="message-story">
 				<?php 
@@ -76,5 +77,6 @@
 
 	<div class="baground">	</div>
 	<script src="/js/main.js"></script>
+	<script src="/js/script.js"></script>
 </body>
 </html>

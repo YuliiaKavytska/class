@@ -14,7 +14,7 @@
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 		include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 		if(!isset($_COOKIE["student"])){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}
 	
 		$sqlRating = "SELECT * FROM rating WHERE id=" . $_COOKIE["student"];

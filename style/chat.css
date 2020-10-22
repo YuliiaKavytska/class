@@ -57,6 +57,7 @@ main {
   border-right: 2px solid #3186e8;
   height: 100%;
   overflow: hidden;
+  min-width: 300px;
 }
 
 /* =========================== */
@@ -101,7 +102,7 @@ main {
   border-radius: 5px;
   margin: 0px 5px 0px 0px;
   font-size: 16px;
-  color: #3186e867;
+  color: #231b80;
   letter-spacing: 1px;
   font-weight: bolder;
 }
