@@ -40,7 +40,7 @@
 					$lessons = mysqli_fetch_assoc($result_lessons);
 			?>
 					<tr>
-						<td><?php echo $lessons["id"]; ?></td>
+						<td><?php echo $i+1 ?></td>
 						<td><?php echo $lessons["time_1"]; ?></td>
 						<td><?php echo $lessons["time_2"]; ?></td>
 						<td><?php echo $lessons["break"]; ?> хв</td>

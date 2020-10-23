@@ -41,7 +41,7 @@
 					$contact = mysqli_fetch_assoc($result_contacts);
 				?>
 				<tr>
-					<td><?php echo $contact["id"]; ?></td>
+					<td><?php echo $i+1; ?></td>
 					<td><?php echo $contact["name"]; ?></td>
 					<td><?php echo $contact["subject"]; ?></td>
 					<td><?php echo $contact["phone"]; ?></td>

@@ -18,7 +18,7 @@
 			$teacher = mysqli_fetch_assoc($resultTeacher);	
 	?>
 	<tr>
-		<td><?php echo $homework["id"]; ?></td>
+		<td><?php echo $i+1; ?></td>
 		<td><?php echo $teacher["subject"]; ?></td>
 		<td><?php echo $homework["day"]; ?></td>
 		<td><?php echo $homework["homework"]; ?></td>

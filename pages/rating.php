@@ -45,7 +45,7 @@
 					$teacher = mysqli_fetch_assoc($resultTeacher);
 			?>	
 				<tr>
-					<td><?php echo $rating["id"]; ?></td>
+					<td><?php echo $i+1; ?></td>
 					<td><?php echo $student["name"]; ?></td>
 					<td><?php echo $teacher["subject"]; ?></td>
 					<td><?php echo $rating["date"]; ?></td>

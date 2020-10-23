@@ -11,7 +11,7 @@
 			$person = mysqli_fetch_assoc($logResult);
 			if($person["user_status"] == 1){
 				setcookie("teacher", $person["id"], time() + 60*60);
-				header("Location: /pages/admin-homework.php");
+				header("Location: /pages/teacher-chat.php");
 			}else{
 				setcookie("student", $person["id"], time() + 60*60);
 				header("Location: /pages/child-chat.php");

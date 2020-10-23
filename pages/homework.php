@@ -44,7 +44,7 @@
 					$user = mysqli_fetch_assoc($result_user);
          ?>
 				<tr>
-					<td><?php echo $user["id"]; ?></td>
+					<td><?php echo $i+1; ?></td>
 					<td><?php echo $user["subject"]; ?></td>
 					<td><?php echo $homework["homework"]; ?></td>
 					<td><?php echo $homework["day"]; ?></td>
