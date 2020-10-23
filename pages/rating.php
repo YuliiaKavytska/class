@@ -16,12 +16,6 @@
 		if(!isset($_COOKIE["student"])){
 			header("Location: /log-in.php");
 		}
-	
-		$sqlRating = "SELECT * FROM rating WHERE id=" . $_COOKIE["student"];
-		$resultRating = mysqli_query($connect, $sqlRating);
-		$rating = mysqli_fetch_assoc($resultRating);
-		$col_rating = mysqli_num_rows($resultRating);
-
 	?>
 
 	<main>
@@ -36,18 +30,19 @@
 					<th>Оцінка</th>
 				</tr>
 			<?php
-			
+				$sqlRating = "SELECT * FROM rating WHERE student_id=" . $_COOKIE["student"];
+				$resultRating = mysqli_query($connect, $sqlRating);
+				$col_rating = mysqli_num_rows($resultRating);
             $i = 0;
               // пока в перемменной хранится значение меньше чем кол-во ДЗ
               while($i < $col_rating) {
+					$rating = mysqli_fetch_assoc($resultRating);
 				$sqlStudent = "SELECT * FROM contacts WHERE id=" . $rating["student_id"];
 				$resultStudentResult = mysqli_query($connect, $sqlStudent);
 				$student = mysqli_fetch_assoc($resultStudentResult);
 				$sqlTeacher = "SELECT * FROM contacts WHERE id=" . $rating["subject"];
 				$resultTeacher = mysqli_query($connect, $sqlTeacher);
 				$teacher = mysqli_fetch_assoc($resultTeacher);
-                
-				
                 ?>				
 
 				<tr>

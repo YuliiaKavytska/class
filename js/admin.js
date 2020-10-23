@@ -27,3 +27,27 @@ function deleteProduct(element){
 	var table = document.querySelector("#admin-home");
 		 table.innerHTML = addRequest.response;
 }
+
+var addRating = document.querySelector("#add-rating");
+if(addRating != null){
+	addRating.onsubmit = function(event){
+		event.preventDefault();
+		var day = addRating.querySelector("input[name='date']");
+		var rating = addRating.querySelector("input[name='rating']");
+		var stud = addRating.querySelector("select");
+		var teac = addRating.querySelector("input[name='teacher']");
+
+		var data = "add-rating=1&date=" + day.value + "&rating=" + rating.value + "&student=" + stud.value + "&teacher=" + teac.value;
+		console.log(day.value);
+		console.log(rating .value);
+		console.log(stud.value);
+		console.log(teac.value);
+		var addQuery = new XMLHttpRequest();
+		addQuery.open("POST", addRating.action, false);
+		addQuery.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		addQuery.send(data);
+
+		var admin = document.querySelector("#admin-home");
+			 admin.innerHTML = addQuery.response;
+	}
+}

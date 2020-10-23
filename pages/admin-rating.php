@@ -25,7 +25,7 @@
 		<div id="content" class="flex">
 			<p class="admin-title">Поставити учню оцінку</p>
 			
-			<form action="POST">
+			<form action="http://class.local/modules/add-rating.php" method="POST" id="add-rating">
 				<select name="student">
 					<?php
 						$allStudentsSql = "SELECT * FROM contacts WHERE user_status = 0";
@@ -36,12 +36,12 @@
 							}
 							echo "<option value='". $student["id"] . "'>". $student["name"] . "</option>";
 						}
-
 						?>
 				</select>
-				<input type="text" placeholder="10.10.2020">
-				<input type="text" placeholder="12">
-				<button>Виставити</button>
+				<input type="text" name="date" placeholder="10.10.2020">
+				<input type="text" name="rating" placeholder="12">
+				<input type="hidden" name="teacher" value="<?php echo $_COOKIE["teacher"] ?>">
+				<button type="submit">Виставити</button>
 			</form>
 
 			<table id="admin-home">
