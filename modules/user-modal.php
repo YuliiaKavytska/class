@@ -14,7 +14,7 @@
 
 <div <?php if($user["user_status"] == 1){ echo "class='bg'"; }else{ echo "class='baground'"; } ?> style="display:block;">	</div>
 <div class="user-modal" style="display:block;">
-	<div class="close"><a href="<?php if($userModal["user_status"] == 1){ echo "/pages/teacher-chat.php"; }else{ echo "/pages/child-chat.php"; } ?>">X</a></div>
+	<div class="close"><a href="<?php if(stristr($_SERVER['REQUEST_URI'],  '/pages/teacher-chat.php')){ echo "/pages/teacher-chat.php";  }else{ echo "/pages/child-chat.php?"; } ?>">X</a></div>
 	<div class="inner-userid">
 		<div class="header-user">
 			<img src="<?php if($userModal["image"] == ""){ echo "/images/not-find.png"; }else{ echo $userModal["image"]; } ?>" alt="avatar">

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/style/style.css">
 	<link rel="stylesheet" type="text/css" href="/style/chat.css">
 	<link rel="stylesheet" type="text/css" href="/style/admin.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/t-ic.png" />
 	<title>Адміністрування</title>
 </head>
 <body>

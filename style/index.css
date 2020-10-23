@@ -76,17 +76,4 @@ footer .info div:first-child {
   margin: 0px 0px 8px 0px;
 }
 
-/* Скролл */
-body::-webkit-scrollbar {
-  width: 5px;
-}
 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 3px #3186e8;
-  border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #0f5ab1;
-  border-radius: 10px;
-}

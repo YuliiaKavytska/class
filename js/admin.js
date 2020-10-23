@@ -1,4 +1,3 @@
-
 var add = document.querySelector("#add");
 if(add != null){
 	add.onsubmit = function(event){
@@ -10,9 +9,9 @@ if(add != null){
 		var data = "add-home=1&date=" + date.value + "&home=" + home.value + "&teacher=" + teacher.value;
 		
 		var q = new XMLHttpRequest();
-			q.open("POST", add.action, false);
-			q.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			q.send(data);
+			 q.open("POST", add.action, false);
+			 q.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			 q.send(data);
 
 		var admin = document.querySelector("#admin-home");
 			 admin.innerHTML = q.response;
@@ -38,14 +37,11 @@ if(addRating != null){
 		var teac = addRating.querySelector("input[name='teacher']");
 
 		var data = "add-rating=1&date=" + day.value + "&rating=" + rating.value + "&student=" + stud.value + "&teacher=" + teac.value;
-		console.log(day.value);
-		console.log(rating .value);
-		console.log(stud.value);
-		console.log(teac.value);
+
 		var addQuery = new XMLHttpRequest();
-		addQuery.open("POST", addRating.action, false);
-		addQuery.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		addQuery.send(data);
+			 addQuery.open("POST", addRating.action, false);
+			 addQuery.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			 addQuery.send(data);
 
 		var admin = document.querySelector("#admin-home");
 			 admin.innerHTML = addQuery.response;

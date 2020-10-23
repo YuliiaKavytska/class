@@ -5,13 +5,14 @@ if(search != null){
 		var searchPhrase = search.querySelector("input[name='find-user']");
 		var chat = search.querySelector("input[name='chat']");
 		var data = "find=1&find_user=" + searchPhrase.value + "&chat=" + chat.value;
+		
 		var query = new XMLHttpRequest();
-			query.open("POST", search.action, false);
-			query.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			query.send(data);
+			 query.open("POST", search.action, false);
+			 query.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			 query.send(data);
 
 		var replace = document.querySelector("#chat-list");
-			replace.innerHTML = query.response;
+			 replace.innerHTML = query.response;
 	}
 }
 
@@ -33,6 +34,7 @@ if(messageForm != null){
 			 response.open("POST", messageForm.action, false);
 			 response.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
 			 response.send(datamessage);
+			 
 		resetMessages.innerHTML = response.response;
 		messages.scrollTop = messages.scrollHeight;
 		message.value = "";

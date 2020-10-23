@@ -8,8 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/index.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png" />
-
+	<link rel="shortcut icon" type="image/x-icon" href="/images/ic.png" />
 	<title>Наш клас</title>
 </head>
 <body>
@@ -55,7 +54,7 @@
 
 	<footer>
 		<a href="index.php" id="logo">
-			<img src="images/logo1.png" alt="logo">
+			<img src="images/ic.png" alt="logo">
 			<span>
 				<b>Наш клас</b>
 			</span>
@@ -66,8 +65,5 @@
 			<div class="teacher">Класний керівник: Тимофієва Тетяна Олегівна</div>
 		</div>
 	</footer>
-
-<script src="js/main.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>

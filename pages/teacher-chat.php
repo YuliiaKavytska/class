@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/style/style.css">
 	<link rel="stylesheet" type="text/css" href="/style/chat.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/t-ic.png" />
 	<title>Чат</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
 	<main>
 		<div id="content">
 			<aside id="users">
-			<form method="POST" id="search" action="http://class.local/sql-find-user.php">
+			<form method="POST" id="search" action="http://class.local/modules/sql-find-user.php">
 					<input type="text" name="find-user" placeholder="Search...">
 					<input type="hidden" name="chat" value='<?php if(isset($_COOKIE['student'])){ echo "student"; }else{ echo "teacher"; } ?>'>
 					<button type="submit" name="find">
@@ -58,7 +58,7 @@
 					$findResult = $connect -> query($findUserSql);
 					$user = mysqli_fetch_assoc($findResult);
 					?>
-					<form id="send-form" method="POST" action="http://class.local/show-chat.php">
+					<form id="send-form" method="POST" action="http://class.local/modules/show-chat.php">
 						<div class="avatar">
 							<img src="<?php if($user["image"] == ""){ echo "/images/not-find.png"; }else{ echo $user["image"]; } ?>" alt="user">
 						</div>
@@ -75,12 +75,9 @@
 					<?php
 				}
 				?>
-				
 			</section>
-			
 		</div>
 	</main>
-
 	<div class="baground">	</div>
 	<script src="/js/main.js"></script>
 	<script src="/js/script.js"></script>

@@ -1,7 +1,6 @@
-
 <ul id="replace">
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
+	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 	if(isset($_COOKIE["teacher"])){
 		$findUser = $_COOKIE["teacher"];
 		if(isset($chat) && $nameChat ==  'teacher'){
@@ -21,7 +20,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 			$chatsSql = "SELECT * FROM contacts WHERE user_status = 1";
 		}
 	}
-	
 	$chatResult = mysqli_query($connect, $chatsSql);
 	if(mysqli_num_rows($chatResult) != 0){
 		while($user = mysqli_fetch_assoc($chatResult)){
@@ -38,7 +36,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
 			<?php	
 		}
 	}else{
-		echo "<h2 class=\"chose-contact\">Пользователь не найден.</h2>";
+		echo "<h2 class=\"chose-contact\">Пошук не дав результатів.</h2>";
 	}
 ?>
 </ul>

@@ -1,6 +1,6 @@
 <header class="header">
 	<a href="/" id="logo">
-		<img src="/images/logo1.png" alt="logo">
+		<img src="/images/ic.png" alt="logo">
 		<span>
 			<b>Наш клас</b>
 		</span>

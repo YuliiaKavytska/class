@@ -6,21 +6,20 @@
 	<th>Оцінка</th>
 	<th>Видалення</th>
 </tr>
-
 	<?php
-	$sqlRating = "SELECT * FROM rating WHERE subject=" . $_COOKIE["teacher"];
-	$resultRating = mysqli_query($connect, $sqlRating);
-	$col_rating = mysqli_num_rows($resultRating);
-	$i = 0;
+		$sqlRating = "SELECT * FROM rating WHERE subject=" . $_COOKIE["teacher"];
+		$resultRating = mysqli_query($connect, $sqlRating);
+		$col_rating = mysqli_num_rows($resultRating);
+		$i = 0;
 		// пока в перемменной хранится значение меньше чем кол-во оценок
-	while($i < $col_rating) {
-		$rating = mysqli_fetch_assoc($resultRating);
-		$sqlStudent = "SELECT * FROM contacts WHERE id=" . $rating["student_id"];
-		$resultStudentResult = mysqli_query($connect, $sqlStudent);
-		$student = mysqli_fetch_assoc($resultStudentResult);
-		$sqlTeacher = "SELECT * FROM contacts WHERE id=" . $rating["subject"];
-		$resultTeacher = mysqli_query($connect, $sqlTeacher);
-		$teacher = mysqli_fetch_assoc($resultTeacher);
+		while($i < $col_rating) {
+			$rating = mysqli_fetch_assoc($resultRating);
+			$sqlStudent = "SELECT * FROM contacts WHERE id=" . $rating["student_id"];
+			$resultStudentResult = mysqli_query($connect, $sqlStudent);
+			$student = mysqli_fetch_assoc($resultStudentResult);
+			$sqlTeacher = "SELECT * FROM contacts WHERE id=" . $rating["subject"];
+			$resultTeacher = mysqli_query($connect, $sqlTeacher);
+			$teacher = mysqli_fetch_assoc($resultTeacher);
 	?>
 	<tr>
 		<td><?php echo $rating["id"]; ?></td>
@@ -33,5 +32,5 @@
 	<?php
 		// Увеличиваем счетчик
 		$i = $i + 1;
-}
-?>
+		}
+	?>

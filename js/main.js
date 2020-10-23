@@ -3,9 +3,7 @@ let bg = document.querySelector(".bg");
 
 // ===============================================
 if(bg != null){
-	console.log("1");
 	bg.onclick = function(){
-		console.log("1");
 		if(document.location.href != "teacher-chat.php"){
 			document.location.href = "/pages/teacher-chat.php";
 		}

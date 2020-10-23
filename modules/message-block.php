@@ -12,7 +12,7 @@
 			}else if(isset($_GET["chat_id"])){
 				$recipient = $_GET["chat_id"];
 			}
-			if(isset($_GET["chat_id"]) && $_GET["chat_id"] == 1){
+			if((isset($_GET["chat_id"]) && $_GET["chat_id"] == 1) || (isset($recipient) && $recipient == 1)){
 				$chatSql = "SELECT * FROM messages WHERE recipient_id = 1";
 			}else{
 				$chatSql = "SELECT * FROM messages WHERE sender_id = " . $user . " AND recipient_id = " . $recipient . 
@@ -27,16 +27,14 @@
 					$findUser = mysqli_fetch_assoc($avatatResult);
 					?>
 						<li>
-							<a class="avatar" href="<?php echo "/pages/child-chat.php?user_id=" . $avatar["id"] ?>">
+							<a class="avatar" href="<?php if(stristr($_SERVER['REQUEST_URI'],  '/pages/teacher-chat.php')){ echo "/pages/teacher-chat.php?user_id=" . $findUser["id"];  }else{ echo "/pages/child-chat.php?user_id=" . $findUser["id"]; } ?>">
 								<img src="<?php if($findUser["image"] == ""){ echo "/images/not-find.png"; }else{ echo $findUser["image"]; }  ?>" alt="user">
 							</a>
 							<div id="infos-chat">
 								<h2><?php echo $findUser["name"]  ?></h2>
 								<p><?php echo $message["message"] ?></p>
 							</div>
-							<div class="time">
-							<?php echo $message["time"] ?>
-							</div>
+							<div class="time"><?php echo $message["time"] ?></div>
 						</li>
 					<?php
 				}
@@ -45,7 +43,7 @@
 			}
 			
 		}else{ //Запросов ГЕТ не существует. значит чат еще нужно выбрать
-			echo "<h2 class=\"chose-contact\">Чат вибраний. Оберіть користувача зі списку чатів...</h2>";
+			echo "<h2 class=\"chose-contact\">Чат не обрано. Оберіть користувача зі списку чатів...</h2>";
 		}
 	?>
 </ul>

@@ -71,11 +71,6 @@ button:active {
   background: #231b80;
 }
 
-/* .admin th,
-.admin td {
-  padding: 15px 90px;
-} */
-
 #admin-home th:first-child,
 #admin-home td:first-child,
 #admin-rating th:first-child,
@@ -85,15 +80,15 @@ button:active {
 #admin-rating th:last-child,
 #admin-rating td:last-child,
 #admin-home th:last-child,
-#admin-home td:last-child{
+#admin-home td:last-child {
   padding: 15px 20px;
 }
 
 #admin-rating th:nth-child(2),
-#admin-rating td:nth-child(2){
+#admin-rating td:nth-child(2) {
   padding: 15px 90px;
-} 
+}
 
-.click{
+.click {
   cursor: pointer;
 }
