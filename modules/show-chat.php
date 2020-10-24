@@ -11,7 +11,7 @@
 		mysqli_query($connect, $editSqlSec);
 
 		
-		$recipient = $_POST["recipient"];
+		$rec = $_POST["recipient"];
 		include $_SERVER['DOCUMENT_ROOT'] . "/modules/message-block.php";
 	}
 ?>

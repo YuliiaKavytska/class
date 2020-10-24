@@ -21,6 +21,8 @@
 	}else{
 		$i = 0;
 		while($i < 5){
+			$homework = mysqli_fetch_assoc($homeResult);
+
 			$subjectSql = "SELECT * FROM contacts WHERE id=" . $homework["subject"];
 			$teacherResult = mysqli_query($connect, $subjectSql);
 			$teacher = mysqli_fetch_assoc($teacherResult);
@@ -31,6 +33,7 @@
 				<p><?php echo $homework["homework"] ?></p>
 			</li>
 <?php
+		$i +=1;
 	}
 }
 ?>

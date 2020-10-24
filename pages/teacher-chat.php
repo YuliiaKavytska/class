@@ -27,7 +27,7 @@
 	<main>
 		<div id="content">
 			<aside id="users">
-			<form method="POST" id="search" action="http://class.local/modules/sql-find-user.php">
+				<form method="POST" id="search" action="http://class.local/modules/sql-find-user.php">
 					<input type="text" name="find-user" placeholder="Search...">
 					<input type="hidden" name="chat" value='<?php if(isset($_COOKIE['student'])){ echo "student"; }else{ echo "teacher"; } ?>'>
 					<button type="submit" name="find">
@@ -66,7 +66,7 @@
 							<textarea name="message" id="text-message" placeholder="Ваше повідомлення..."></textarea>
 							<input type="hidden" name="sender" value="<?php if(isset($_COOKIE["student"])){ echo $_COOKIE["student"]; }else{ echo $_COOKIE["teacher"]; } ?>">
 							<input type="hidden" name="recipient" value="<?php echo $_GET["chat_id"] ?>">
-							<button type="send"> <img src="/images/send.png" alt="">Надіслати</button>
+							<button type="send"><img src="/images/send.png" alt="">Надіслати</button>
 						</div>
 						<div class="avatar">
 							<img src="<?php if($recipient["image"] == ""){ echo "/images/not-find.png"; }else{ echo $recipient["image"]; } ?>" alt="user">

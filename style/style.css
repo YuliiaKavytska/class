@@ -285,3 +285,8 @@ body::-webkit-scrollbar-thumb {
   background-color: #0f5ab1;
   border-radius: 10px;
 }
+
+table th:first-child,
+table td:first-child{
+  padding: 15px 20px;
+}

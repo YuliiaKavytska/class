@@ -38,7 +38,8 @@
             while($i < $col_homework) {
 					// mysqli_fetch_assoc - преобразовать полученные данные пользователя в массив
 					$homework = mysqli_fetch_assoc($result_homework);
-					$sql_user = "SELECT * FROM contacts WHERE user_status = 1";
+
+					$sql_user = "SELECT * FROM contacts WHERE id =" . $homework["subject"];
 					// выполнить sql запрос в базе данных
 					$result_user = mysqli_query($connect, $sql_user);
 					$user = mysqli_fetch_assoc($result_user);

@@ -18,7 +18,7 @@ if(search != null){
 
 var messageForm = document.querySelector("#send-form");
 var resetMessages = document.querySelector("#messages");
-messages.scrollTop = messages.scrollHeight;
+resetMessages.scrollTop = resetMessages.scrollHeight;
 if(messageForm != null){
 	messageForm.onsubmit = function(ev){
 		ev.preventDefault();
@@ -36,7 +36,7 @@ if(messageForm != null){
 			 response.send(datamessage);
 			 
 		resetMessages.innerHTML = response.response;
-		messages.scrollTop = messages.scrollHeight;
-		message.value = "";
+		resetMessages.scrollTop = resetMessages.scrollHeight;
+		resetMessages.value = "";
 	}
 }

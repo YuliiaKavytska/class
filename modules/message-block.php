@@ -1,17 +1,19 @@
 <ul>
 	<?php
 	include $_SERVER['DOCUMENT_ROOT'] . "/configs/db.php";
-		if(isset($_GET["chat_id"]) || isset($recipient)){
+		if(isset($_GET["chat_id"]) || isset($rec)){
 			if(isset($_COOKIE["student"])){
 				$user = $_COOKIE["student"];
 			}else{
 				$user = $_COOKIE["teacher"];
 			}
-			if(isset($recipientUserId)){
-				$recipient = $recipientUserId;
+
+			if(isset($rec)){
+				$recipient = $rec;
 			}else if(isset($_GET["chat_id"])){
 				$recipient = $_GET["chat_id"];
 			}
+
 			if((isset($_GET["chat_id"]) && $_GET["chat_id"] == 1) || (isset($recipient) && $recipient == 1)){
 				$chatSql = "SELECT * FROM messages WHERE recipient_id = 1";
 			}else{
