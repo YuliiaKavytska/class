@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Окт 24 2020 г., 14:34
--- Версия сервера: 10.4.14-MariaDB
--- Версия PHP: 7.4.10
+-- Host: 127.0.0.1
+-- Generation Time: Oct 24, 2020 at 08:14 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `class`
+-- Database: `class`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `contacts`
+-- Table structure for table `contacts`
 --
 
 CREATE TABLE `contacts` (
@@ -41,16 +41,16 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `contacts`
+-- Dumping data for table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `name`, `user_status`, `image`, `phone`, `about`, `login`, `password`, `last_message`, `subject`) VALUES
 (1, 'Чат класу', 0, '', '', 'Чат класу', '', '', 'На слідуючому уроці буде контрольна робота', ''),
-(2, 'Андрій Петров', 0, '/images/16.png', '+38032547544', 'Люблю кататися на велосипеді, та грати на компьютері', 'a@a.a', 'a', 'Самостійну роботу № 5 вислав на перевірку', ''),
-(3, 'Василь Іванов', 0, '/images/19.png', '+38024573154', 'Мої улюблені предмети це фізика та математика', 'i@i.i', 'i', 'Домашню роботу № 3 доробив та вислав на перевірку', ''),
-(4, 'Петрова Надія Василівна', 1, '/images/04.png', '+38043157245', 'Особисті якості:\r\nДисціплінованість, працьовитість\r\nХобі: мистецтво та культура', 'n@n.n', 'n', 'Студенту Іванову доробити домашню роботу № 3', 'Фізика'),
-(5, 'Гуріна Світлана Леонідівна', 1, '/images/05.png', '+380431579458', 'Особисті якості:\r\nЛюбов до дітей, відповідальність\r\nХобі: теніс', 'g@g.g', 'g', 'Студенту Іванову доробити домашню роботу № 3', 'українська мова'),
-(6, 'Линник Алла Михайлівна', 1, '/images/22.png', '+38031645784', 'Особисті якості:\r\nвідповідальність\r\nХобі: в’язання', 'l@l.l', 'l', 'На слідуючому уроці будемо писати диктант', 'українська література'),
+(2, 'Андрій Петров', 0, '/images/16.png', '+38032547544', 'Люблю кататися на велосипеді, та грати на компьютері', 'a@a.a', 'a', '1', ''),
+(3, 'Василь Іванов', 0, '/images/19.png', '+38024573154', 'Мої улюблені предмети це фізика та математика', 'i@i.i', 'i', '1', ''),
+(4, 'Петрова Надія Василівна', 1, '/images/04.png', '+38043157245', 'Особисті якості:\r\nДисціплінованість, працьовитість\r\nХобі: мистецтво та культура', 'n@n.n', 'n', '1', 'Фізика'),
+(5, 'Гуріна Світлана Леонідівна', 1, '/images/05.png', '+380431579458', 'Особисті якості:\r\nЛюбов до дітей, відповідальність\r\nХобі: теніс', 'g@g.g', 'g', 'Студенту Іванову доробити домашню роботу № 3', 'Українська мова'),
+(6, 'Линник Алла Михайлівна', 1, '/images/22.png', '+38031645784', 'Особисті якості:\r\nвідповідальність\r\nХобі: в’язання', 'l@l.l', 'l', 'На слідуючому уроці будемо писати диктант', 'Українська література'),
 (7, 'Петренко Людмила Олексіївна', 1, '/images/08.png', '+38052134678', 'Особисті якості:\r\nуважність до деталей\r\nХобі: іноземні мови', 'p@p.p', 'p', 'Всі вибрані учні готуємося до олімпіади', 'Математика'),
 (8, 'Дем\'яненко Вікторія Михайлівна', 1, '/images/21.jpg', '+38052134678', 'Особисті якості:\r\nпрацьовитість, цілеспрямованість\r\nХобі: волейбол', 'd@d.d', 'd', 'Всі вибрані учні готуємося до олімпіади', 'Зарубіжна література'),
 (9, 'Валько Олександр Михайлович', 1, '/images/09.png', '+38061342754', 'Особисті якості:\r\nпунктуальність, наполегливість\r\nХобі: футбол', 'v@v.v', 'v', 'Вивчити тему Теорія алгоритмів', 'Інформатика'),
@@ -70,7 +70,7 @@ INSERT INTO `contacts` (`id`, `name`, `user_status`, `image`, `phone`, `about`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `homework`
+-- Table structure for table `homework`
 --
 
 CREATE TABLE `homework` (
@@ -81,7 +81,7 @@ CREATE TABLE `homework` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `homework`
+-- Dumping data for table `homework`
 --
 
 INSERT INTO `homework` (`id`, `subject`, `day`, `homework`) VALUES
@@ -94,7 +94,7 @@ INSERT INTO `homework` (`id`, `subject`, `day`, `homework`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `lessons`
+-- Table structure for table `lessons`
 --
 
 CREATE TABLE `lessons` (
@@ -105,7 +105,7 @@ CREATE TABLE `lessons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `lessons`
+-- Dumping data for table `lessons`
 --
 
 INSERT INTO `lessons` (`id`, `time_1`, `time_2`, `break`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `lessons` (`id`, `time_1`, `time_2`, `break`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -133,7 +133,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `messages`
+-- Dumping data for table `messages`
 --
 
 INSERT INTO `messages` (`id`, `sender_id`, `recipient_id`, `message`, `time`) VALUES
@@ -145,12 +145,14 @@ INSERT INTO `messages` (`id`, `sender_id`, `recipient_id`, `message`, `time`) VA
 (6, 2, 15, 'Привіт! Ты зробив вправи 11 та 12 на стр 126?', '00:00:00'),
 (7, 15, 2, 'Привіт! Так', '00:00:00'),
 (8, 4, 3, 'Іванов ти доробив домашню роботу № 3?', '00:00:00'),
-(9, 3, 4, 'Ще не встиг', '00:00:00');
+(9, 3, 4, 'Ще не встиг', '00:00:00'),
+(10, 2, 3, '1', '20:54:43'),
+(11, 2, 4, '1', '20:54:51');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `rating`
+-- Table structure for table `rating`
 --
 
 CREATE TABLE `rating` (
@@ -162,11 +164,10 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `rating`
+-- Dumping data for table `rating`
 --
 
 INSERT INTO `rating` (`id`, `student_id`, `date`, `rating`, `subject`) VALUES
-(1, 2, '', 10, 4),
 (2, 3, '10.11.2020', 8, 5),
 (3, 14, '8.10.2020', 9, 6),
 (4, 15, '8.10.2020', 7, 7),
@@ -175,75 +176,76 @@ INSERT INTO `rating` (`id`, `student_id`, `date`, `rating`, `subject`) VALUES
 (7, 18, '8.10.2020', 10, 10),
 (8, 19, '8.10.2020', 9, 11),
 (9, 20, '8.10.2020', 8, 12),
-(10, 21, '8.10.2020', 7, 13);
+(10, 21, '8.10.2020', 7, 13),
+(11, 14, '2020-10-10', 9, 4);
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `contacts`
+-- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `homework`
+-- Indexes for table `homework`
 --
 ALTER TABLE `homework`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `lessons`
+-- Indexes for table `lessons`
 --
 ALTER TABLE `lessons`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `rating`
+-- Indexes for table `rating`
 --
 ALTER TABLE `rating`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `contacts`
+-- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT для таблицы `homework`
+-- AUTO_INCREMENT for table `homework`
 --
 ALTER TABLE `homework`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `lessons`
+-- AUTO_INCREMENT for table `lessons`
 --
 ALTER TABLE `lessons`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблицы `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT для таблицы `rating`
+-- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -14,7 +14,7 @@
 		"VALUES ('" . $_POST["name"] . "', '" . $_POST["user_status"] . "', '" . $_POST["phone"] . 
 		"', '" . $_POST["about"] . "', '" . $_POST["email"] . "', '" . $_POST["password"] . "', '" . $_POST["subject"] . "')";
 		if(mysqli_query($connect, $regisSql)){
-			header("Location: /pages/log-in.php");
+			header("Location: /log-in.php");
 		}else{
 			echo "<h2>Error!</h2>" . mysqli_error($connect);
 		}
