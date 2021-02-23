@@ -37,6 +37,6 @@ if(messageForm != null){
 			 
 		resetMessages.innerHTML = response.response;
 		resetMessages.scrollTop = resetMessages.scrollHeight;
-		resetMessages.value = "";
+		message.value = "";
 	}
 }

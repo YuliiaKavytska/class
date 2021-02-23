@@ -43,7 +43,6 @@ body {
 /* Модальное окно для входа */
 #log-in-modal {
   min-height: 260px;
-  margin-top: 150px;
 }
 #sign-up-modal {
   min-height: 340px;
@@ -168,6 +167,27 @@ select:focus {
   color: #231b80;
   background: #3186e867;
   transition: 1s;
+}
+
+.logins {
+	max-width: 400px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.logins p {
+  margin-bottom: 12px;
+  padding: 10px 10px;
+  border: 1px solid #231b80;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #231b80;
+  background: #3186e867;
+  transition: 1s;
+}
+
+.logins span {
+	display: block;
 }
 /* Модальное окно для входа */
 /* =========================== */

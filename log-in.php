@@ -34,6 +34,16 @@
 	<?php
 		include $_SERVER['DOCUMENT_ROOT'] . "/pice-of-site/header.php";
 	?>
+	<div class="logins">
+		<p>Аккаунт вчителя:
+			<span>Логін: n@n.n</span>
+			<span>Пароль: n</span>
+		</p>
+		<p>Аккаунт учня:
+			<span>Логін: i@i.i</span>
+			<span>Пароль: i</span>
+		</p>
+	</div>
 	<div class="modal" id="log-in-modal" style="display:block;">
 		<p>Вхід</p>
 		<form id="log-in-form" action="/log-in.php" method="POST">
